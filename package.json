@@ -1,0 +1,16 @@
+{
+  "name": "type-util",
+  "description": "Simple utility for type checking",
+  "version": "0.1.0",
+  "author": "igor ovsyannikov <garek@mail.ru>",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ggarek/type-util.git"
+  },
+  "homepage": "https://github.com/ggarek/type-util.git",
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "keywords": ["type", "util"],
+  "main" :  "./lib/typeutil.js"
+}
