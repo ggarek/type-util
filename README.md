@@ -2,6 +2,23 @@
 
 _typeutil_ is simple library for type checking
 
+## Example
+```javascript
+var Type = require('typeutil');
+
+function sum(a,b) {
+  if(!Type.isNumber(a) || !Type.isNumber(b)){
+    throw new Error("arguments should be of type 'Number'");
+  }
+  
+  if(isNaN(a) || isNaN(b)){
+    throw new Error("arguments should not be NaN");
+  }
+  
+  return a + b;
+}
+```
+
 ## License
 
 (The MIT License)

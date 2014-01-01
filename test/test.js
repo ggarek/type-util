@@ -54,6 +54,8 @@ describe('Type', function() {
       assert(Type.isObject(new Error()) === false);
       assert(Type.isObject(function () {}) === false);
       assert(Type.isObject(new Function()) === false);
+      assert(Type.isObject(null) === false);
+      assert(Type.isObject(undefined) === false);
     });
   });
   
@@ -72,6 +74,8 @@ describe('Type', function() {
       assert(Type.isString(new Error()) === false);
       assert(Type.isString(function () {}) === false);
       assert(Type.isString(new Function()) === false);
+      assert(Type.isString(null) === false);
+      assert(Type.isString(undefined) === false);
     });
   });
 
@@ -93,6 +97,8 @@ describe('Type', function() {
       assert(Type.isNumber(new Error()) === false);
       assert(Type.isNumber(function () {}) === false);
       assert(Type.isNumber(new Function()) === false);
+      assert(Type.isNumber(null) === false);
+      assert(Type.isNumber(undefined) === false);
     });
   });
   
@@ -111,6 +117,8 @@ describe('Type', function() {
       assert(Type.isRegExp(new Error()) === false);
       assert(Type.isRegExp(function () {}) === false);
       assert(Type.isRegExp(new Function()) === false);
+      assert(Type.isRegExp(null) === false);
+      assert(Type.isRegExp(undefined) === false);
     });
   });
   
@@ -128,6 +136,8 @@ describe('Type', function() {
       assert(Type.isFunction(5) === false);
       assert(Type.isFunction(new Error()) === false);
       assert(Type.isFunction(/\d+/gmi) === false);
+      assert(Type.isFunction(null) === false);
+      assert(Type.isFunction(undefined) === false);
     });
   });
 
@@ -144,6 +154,8 @@ describe('Type', function() {
       assert(Type.isError(5) === false);
       assert(Type.isError(function () {}) === false);
       assert(Type.isError(/\d+/gmi) === false);
+      assert(Type.isError(null) === false);
+      assert(Type.isError(undefined) === false);
     });
   });
   
@@ -161,6 +173,8 @@ describe('Type', function() {
       assert(Type.isArguments(5) === false);
       assert(Type.isArguments(function () {}) === false);
       assert(Type.isArguments(/\d+/gmi) === false);
+      assert(Type.isArguments(null) === false);
+      assert(Type.isArguments(undefined) === false);
     });
   });
   
@@ -178,6 +192,40 @@ describe('Type', function() {
       assert(Type.isBoolean(5) === false);
       assert(Type.isBoolean(function () {}) === false);
       assert(Type.isBoolean(/\d+/gmi) === false);
+      assert(Type.isBoolean(null) === false);
+      assert(Type.isBoolean(undefined) === false);
+    });
+  });
+  
+  describe('#isNull', function () {
+    it('should return true when value is null', function () {
+      assert(Type.isNull(null));
+    });
+    
+    it('should return false when value is of other type', function () {
+      assert(Type.isNull({}) === false);
+      assert(Type.isNull(new Object()) === false);
+      assert(Type.isNull('') === false);
+      assert(Type.isNull(5) === false);
+      assert(Type.isNull(function () {}) === false);
+      assert(Type.isNull(/\d+/gmi) === false);
+      assert(Type.isNull(undefined) === false);
+    });
+  });
+  
+  describe('#isUndefined', function () {
+    it('should return true when value is undefined', function () {
+      assert(Type.isUndefined(undefined));
+    });
+    
+    it('should return false when value is of other type', function () {
+      assert(Type.isUndefined({}) === false);
+      assert(Type.isUndefined(new Object()) === false);
+      assert(Type.isUndefined('') === false);
+      assert(Type.isUndefined(5) === false);
+      assert(Type.isUndefined(function () {}) === false);
+      assert(Type.isUndefined(/\d+/gmi) === false);
+      assert(Type.isUndefined(null) === false);
     });
   });
 });
