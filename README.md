@@ -14,7 +14,7 @@ function assert(){
 
 assert.isNotNaNNumber = function (value){
   if(!Type.isNumber(value)){
-    throw new TypeError("assert failed: value should be of type 'Number'");
+    throw new TypeError("assertion failed: value should be of type 'Number'");
   }
   if(isNan(value)){
     throw new TypeError("assertion failed: value should not be NaN");
