@@ -163,4 +163,21 @@ describe('Type', function() {
       assert(Type.isArguments(/\d+/gmi) === false);
     });
   });
+  
+  describe('#isBoolean', function () {
+    it('should return true when value is of type Boolean', function () {
+      assert(Type.isBoolean(true));
+      assert(Type.isBoolean(false));
+      assert(Type.isBoolean(new Boolean()));
+    });
+    
+    it('should return false when value is of other type', function () {
+      assert(Type.isBoolean({}) === false);
+      assert(Type.isBoolean(new Object()) === false);
+      assert(Type.isBoolean('') === false);
+      assert(Type.isBoolean(5) === false);
+      assert(Type.isBoolean(function () {}) === false);
+      assert(Type.isBoolean(/\d+/gmi) === false);
+    });
+  });
 });
